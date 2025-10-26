@@ -128,7 +128,7 @@ export default function Index() {
               </div>
 
               <RadioPlayer
-                streamUrl="https://stream.radio.co/se7642a5b4/listen"
+                streamUrl="https://myradio24.org/54137"
                 stationName="КонтентМедиаPRO FM"
                 currentShow="Вечерний драйв"
               />
