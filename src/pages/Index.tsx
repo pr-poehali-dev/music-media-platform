@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import AudioPlayer from '@/components/AudioPlayer';
+import RadioPlayer from '@/components/RadioPlayer';
 import Icon from '@/components/ui/icon';
 
 type Section = 'Главная' | 'Интервью' | 'Новости' | 'Рецензии' | 'Афиша' | 'Видео' | 'Радио' | 'О редакции';
@@ -80,7 +81,7 @@ const articles: Article[] = [
 export default function Index() {
   const [activeSection, setActiveSection] = useState<Section>('Главная');
 
-  const sections: Section[] = ['Главная', 'Интервью', 'Новости', 'Рецензии', 'Афиша', 'Видео', 'Радио', 'О редакции'];
+  const sections: Section[] = ['Главная', 'Радио', 'Интервью', 'Новости', 'Рецензии', 'Афиша', 'Видео', 'О редакции'];
 
   const featuredArticle = articles.find(a => a.featured);
   const otherArticles = articles.filter(a => !a.featured);
@@ -126,32 +127,11 @@ export default function Index() {
                 </p>
               </div>
 
-              <div className="bg-gradient-to-br from-accent/20 to-accent/5 border border-border rounded-2xl p-8 mb-8">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="h-20 w-20 rounded-full bg-red-600 flex items-center justify-center animate-pulse">
-                    <Icon name="Radio" size={40} className="text-white" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-muted-foreground mb-1">Сейчас в эфире</p>
-                    <h3 className="text-2xl font-heading font-bold">Вечерний драйв</h3>
-                    <p className="text-sm text-muted-foreground">18:00 - 22:00</p>
-                  </div>
-                </div>
-
-                <AudioPlayer
-                  title="КонтентМедиаPRO FM"
-                  artist="Прямой эфир"
-                />
-
-                <div className="flex items-center gap-4 mt-4 text-sm text-muted-foreground">
-                  <div className="flex items-center gap-2">
-                    <div className="h-2 w-2 rounded-full bg-red-600 animate-pulse" />
-                    <span>Прямой эфир</span>
-                  </div>
-                  <span>•</span>
-                  <span>2,347 слушателей</span>
-                </div>
-              </div>
+              <RadioPlayer
+                streamUrl="https://stream.radio.co/se7642a5b4/listen"
+                stationName="КонтентМедиаPRO FM"
+                currentShow="Вечерний драйв"
+              />
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-muted/30 border border-border rounded-lg p-6">
