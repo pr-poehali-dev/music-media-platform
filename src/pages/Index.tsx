@@ -91,7 +91,7 @@ export default function Index() {
         <div className="container mx-auto px-4 py-6">
           <div className="flex items-center justify-between mb-6">
             <h1 className="text-4xl md:text-5xl font-heading font-bold tracking-tight">
-              МУЗПРЕСС
+              КонтентМедиа<span className="text-red-600">PRO</span>
             </h1>
             <Button variant="ghost" size="icon">
               <Icon name="Menu" size={24} />
@@ -205,7 +205,7 @@ export default function Index() {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8">
             <div>
-              <h4 className="font-heading text-lg font-semibold mb-4">МУЗПРЕСС</h4>
+              <h4 className="font-heading text-lg font-semibold mb-4">КонтентМедиа<span className="text-red-600">PRO</span></h4>
               <p className="text-sm text-muted-foreground">
                 Музыкальное издание о современной культуре, артистах и трендах
               </p>
@@ -241,7 +241,7 @@ export default function Index() {
           </div>
           
           <div className="mt-8 pt-8 border-t border-border text-center text-sm text-muted-foreground">
-            © 2025 МУЗПРЕСС. Все права защищены
+            © 2025 КонтентМедиаPRO. Все права защищены
           </div>
         </div>
       </footer>
