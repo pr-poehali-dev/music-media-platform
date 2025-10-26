@@ -4,7 +4,7 @@ import { Badge } from '@/components/ui/badge';
 import AudioPlayer from '@/components/AudioPlayer';
 import Icon from '@/components/ui/icon';
 
-type Section = 'Главная' | 'Интервью' | 'Новости' | 'Рецензии' | 'Афиша' | 'Видео' | 'О редакции';
+type Section = 'Главная' | 'Интервью' | 'Новости' | 'Рецензии' | 'Афиша' | 'Видео' | 'Радио' | 'О редакции';
 
 interface Article {
   id: number;
@@ -80,7 +80,7 @@ const articles: Article[] = [
 export default function Index() {
   const [activeSection, setActiveSection] = useState<Section>('Главная');
 
-  const sections: Section[] = ['Главная', 'Интервью', 'Новости', 'Рецензии', 'Афиша', 'Видео', 'О редакции'];
+  const sections: Section[] = ['Главная', 'Интервью', 'Новости', 'Рецензии', 'Афиша', 'Видео', 'Радио', 'О редакции'];
 
   const featuredArticle = articles.find(a => a.featured);
   const otherArticles = articles.filter(a => !a.featured);
@@ -114,7 +114,159 @@ export default function Index() {
       </header>
 
       <main className="container mx-auto px-4 py-8">
-        {featuredArticle && (
+        {activeSection === 'Радио' ? (
+          <section className="animate-fade-in">
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-8">
+                <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">
+                  Интернет-радио КонтентМедиа<span className="text-red-600">PRO</span>
+                </h2>
+                <p className="text-lg text-muted-foreground">
+                  Лучшая музыка 24/7 в прямом эфире
+                </p>
+              </div>
+
+              <div className="bg-gradient-to-br from-accent/20 to-accent/5 border border-border rounded-2xl p-8 mb-8">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="h-20 w-20 rounded-full bg-red-600 flex items-center justify-center animate-pulse">
+                    <Icon name="Radio" size={40} className="text-white" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-muted-foreground mb-1">Сейчас в эфире</p>
+                    <h3 className="text-2xl font-heading font-bold">Вечерний драйв</h3>
+                    <p className="text-sm text-muted-foreground">18:00 - 22:00</p>
+                  </div>
+                </div>
+
+                <AudioPlayer
+                  title="КонтентМедиаPRO FM"
+                  artist="Прямой эфир"
+                />
+
+                <div className="flex items-center gap-4 mt-4 text-sm text-muted-foreground">
+                  <div className="flex items-center gap-2">
+                    <div className="h-2 w-2 rounded-full bg-red-600 animate-pulse" />
+                    <span>Прямой эфир</span>
+                  </div>
+                  <span>•</span>
+                  <span>2,347 слушателей</span>
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="bg-muted/30 border border-border rounded-lg p-6">
+                  <h4 className="text-xl font-heading font-semibold mb-4 flex items-center gap-2">
+                    <Icon name="Calendar" size={20} />
+                    Расписание эфиров
+                  </h4>
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center">
+                      <div>
+                        <p className="font-semibold">Утренний бриз</p>
+                        <p className="text-sm text-muted-foreground">06:00 - 10:00</p>
+                      </div>
+                      <Badge variant="outline">Лёгкая музыка</Badge>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <div>
+                        <p className="font-semibold">Дневной микс</p>
+                        <p className="text-sm text-muted-foreground">10:00 - 14:00</p>
+                      </div>
+                      <Badge variant="outline">Хиты</Badge>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <div>
+                        <p className="font-semibold">Послеобеденный релакс</p>
+                        <p className="text-sm text-muted-foreground">14:00 - 18:00</p>
+                      </div>
+                      <Badge variant="outline">Чилаут</Badge>
+                    </div>
+                    <div className="flex justify-between items-center bg-accent/20 -mx-3 px-3 py-2 rounded">
+                      <div>
+                        <p className="font-semibold">Вечерний драйв</p>
+                        <p className="text-sm text-muted-foreground">18:00 - 22:00</p>
+                      </div>
+                      <Badge className="bg-red-600 text-white">В эфире</Badge>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <div>
+                        <p className="font-semibold">Ночной вайб</p>
+                        <p className="text-sm text-muted-foreground">22:00 - 02:00</p>
+                      </div>
+                      <Badge variant="outline">Электроника</Badge>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <div>
+                        <p className="font-semibold">Ночной джаз</p>
+                        <p className="text-sm text-muted-foreground">02:00 - 06:00</p>
+                      </div>
+                      <Badge variant="outline">Джаз</Badge>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-muted/30 border border-border rounded-lg p-6">
+                  <h4 className="text-xl font-heading font-semibold mb-4 flex items-center gap-2">
+                    <Icon name="Music" size={20} />
+                    Популярные треки
+                  </h4>
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-3">
+                      <div className="h-12 w-12 rounded bg-gradient-to-br from-red-600 to-red-400 flex items-center justify-center text-white font-bold">1</div>
+                      <div className="flex-1">
+                        <p className="font-semibold text-sm">Гравитация</p>
+                        <p className="text-xs text-muted-foreground">Пан Пантер feat. Катя Денисова</p>
+                      </div>
+                      <Button variant="ghost" size="icon" className="h-8 w-8">
+                        <Icon name="Play" size={16} />
+                      </Button>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="h-12 w-12 rounded bg-gradient-to-br from-gray-600 to-gray-400 flex items-center justify-center text-white font-bold">2</div>
+                      <div className="flex-1">
+                        <p className="font-semibold text-sm">Летний вечер</p>
+                        <p className="text-xs text-muted-foreground">Artik & Asti</p>
+                      </div>
+                      <Button variant="ghost" size="icon" className="h-8 w-8">
+                        <Icon name="Play" size={16} />
+                      </Button>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="h-12 w-12 rounded bg-gradient-to-br from-amber-600 to-amber-400 flex items-center justify-center text-white font-bold">3</div>
+                      <div className="flex-1">
+                        <p className="font-semibold text-sm">Между нами</p>
+                        <p className="text-xs text-muted-foreground">Miyagi & Andy Panda</p>
+                      </div>
+                      <Button variant="ghost" size="icon" className="h-8 w-8">
+                        <Icon name="Play" size={16} />
+                      </Button>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="h-12 w-12 rounded bg-muted flex items-center justify-center text-muted-foreground font-bold">4</div>
+                      <div className="flex-1">
+                        <p className="font-semibold text-sm">Танцы на стёклах</p>
+                        <p className="text-xs text-muted-foreground">Скриптонит</p>
+                      </div>
+                      <Button variant="ghost" size="icon" className="h-8 w-8">
+                        <Icon name="Play" size={16} />
+                      </Button>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="h-12 w-12 rounded bg-muted flex items-center justify-center text-muted-foreground font-bold">5</div>
+                      <div className="flex-1">
+                        <p className="font-semibold text-sm">Мало так мало</p>
+                        <p className="text-xs text-muted-foreground">Zivert</p>
+                      </div>
+                      <Button variant="ghost" size="icon" className="h-8 w-8">
+                        <Icon name="Play" size={16} />
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        ) : activeSection === 'Главная' && featuredArticle ? (
           <section className="mb-12 animate-fade-in">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div className="relative overflow-hidden rounded-lg aspect-[4/3] group">
@@ -153,8 +305,9 @@ export default function Index() {
               </div>
             </div>
           </section>
-        )}
+        ) : null}
 
+        {activeSection === 'Главная' && (
         <section className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {otherArticles.map((article, index) => (
             <article
@@ -199,6 +352,7 @@ export default function Index() {
             </article>
           ))}
         </section>
+        )}
       </main>
 
       <footer className="border-t border-border mt-16 py-8">
