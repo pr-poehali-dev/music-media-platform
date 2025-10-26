@@ -22,7 +22,7 @@ interface Article {
 const articles: Article[] = [
   {
     id: 1,
-    title: 'Пан Пантера: "Гравитация" — это про притяжение двух миров',
+    title: 'Пан Пантер: "Гравитация" — это про притяжение двух миров',
     category: 'Интервью',
     image: 'https://cdn.poehali.dev/files/5f25b9fc-c7a7-45be-be53-cbf3f32f5abb.jpg',
     excerpt: 'Эксклюзивное интервью с артистом о новом треке совместно с Катей Денисовой и планах на будущее',
@@ -30,7 +30,7 @@ const articles: Article[] = [
     featured: true,
     hasAudio: true,
     audioTitle: 'Гравитация',
-    audioArtist: 'Пан Пантера feat. Катя Денисова'
+    audioArtist: 'Пан Пантер feat. Катя Денисова'
   },
   {
     id: 2,
