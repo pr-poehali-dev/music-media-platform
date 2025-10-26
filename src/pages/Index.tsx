@@ -22,15 +22,15 @@ interface Article {
 const articles: Article[] = [
   {
     id: 1,
-    title: 'Новая волна российского хип-хопа: интервью с восходящими звездами',
+    title: 'Пан Пантера: "Гравитация" — это про притяжение двух миров',
     category: 'Интервью',
-    image: 'https://cdn.poehali.dev/projects/5ece38b0-b2be-4b0c-8835-fe706b8ba4ca/files/abaa46a2-05aa-4227-8540-64f6bbb2888b.jpg',
-    excerpt: 'Разговор о новом поколении артистов, меняющих правила игры в индустрии',
+    image: 'https://cdn.poehali.dev/files/5f25b9fc-c7a7-45be-be53-cbf3f32f5abb.jpg',
+    excerpt: 'Эксклюзивное интервью с артистом о новом треке совместно с Катей Денисовой и планах на будущее',
     date: '26 октября 2025',
     featured: true,
     hasAudio: true,
-    audioTitle: 'Отрывок из интервью',
-    audioArtist: 'Новая волна'
+    audioTitle: 'Гравитация',
+    audioArtist: 'Пан Пантера feat. Катя Денисова'
   },
   {
     id: 2,
