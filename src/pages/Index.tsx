@@ -129,9 +129,9 @@ export default function Index() {
               </div>
 
               <HLSTVPlayer
-                streamUrl="http://streamer-sochi.rikt.ru/tnt_music/playlist.m3u8"
+                streamUrl="https://stream10.xdevel.com/video0s977798-2239/stream/playlist.m3u8"
                 channelName="КонтентМедиаPRO TV"
-                currentShow="Русские и зарубежные хиты 24/7"
+                currentShow="Европейские и русские хиты 24/7"
               />
 
               <div className="bg-muted/30 border border-border rounded-lg p-6">
