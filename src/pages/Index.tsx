@@ -129,7 +129,7 @@ export default function Index() {
               </div>
 
               <HLSTVPlayer
-                streamUrl="https://strm.yandex.ru/kal/bridgetvhits/bridgetvhits0.m3u8"
+                streamUrl="https://hls-mycdn08724960135.cdnvideo.ru/mycdn08724960135/stream1/playlist.m3u8"
                 channelName="КонтентМедиаPRO TV"
                 currentShow="Русские и зарубежные хиты 24/7"
               />
