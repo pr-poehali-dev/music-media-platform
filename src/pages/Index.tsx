@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import AudioPlayer from '@/components/AudioPlayer';
 import RadioPlayer from '@/components/RadioPlayer';
-import TVPlayer from '@/components/TVPlayer';
+import VideoPlaylist from '@/components/VideoPlaylist';
 import Icon from '@/components/ui/icon';
 
 type Section = 'Главная' | 'Интервью' | 'Новости' | 'Рецензии' | 'Афиша' | 'Видео' | 'Радио' | 'ТВ' | 'О редакции';
@@ -124,44 +124,11 @@ export default function Index() {
                   Музыкальное ТВ КонтентМедиа<span className="text-red-600">PRO</span>
                 </h2>
                 <p className="text-lg text-muted-foreground">
-                  Лучшие музыкальные клипы в прямом эфире
+                  Лучшие музыкальные клипы с автоплеем
                 </p>
               </div>
 
-              <TVPlayer
-                videoUrl="https://www.youtube.com/embed/live_stream?channel=UC-9-kyTW8ZkZNDHQJ6FgpwQ&autoplay=1"
-                channelName="КонтентМедиаPRO TV"
-                currentShow="Музыкальный марафон"
-              />
-
-              <div className="bg-muted/30 border border-border rounded-lg p-6">
-                <h4 className="text-xl font-heading font-semibold mb-4 flex items-center gap-2">
-                  <Icon name="Info" size={20} />
-                  О канале
-                </h4>
-                <p className="text-muted-foreground mb-4">
-                  Круглосуточный музыкальный канал с лучшими клипами российских и зарубежных исполнителей. 
-                  Качественный контент без рекламы.
-                </p>
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="flex items-center gap-2">
-                    <Icon name="Music" size={18} className="text-red-600" />
-                    <span className="text-sm">Музыкальные клипы</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Icon name="Radio" size={18} className="text-red-600" />
-                    <span className="text-sm">Прямой эфир 24/7</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Icon name="Sparkles" size={18} className="text-red-600" />
-                    <span className="text-sm">HD качество</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Icon name="Users" size={18} className="text-red-600" />
-                    <span className="text-sm">Без рекламы</span>
-                  </div>
-                </div>
-              </div>
+              <VideoPlaylist channelName="КонтентМедиаPRO TV" />
             </div>
           </section>
         ) : activeSection === 'Радио' ? (
