@@ -15,6 +15,7 @@ export default function HLSTVPlayer({ streamUrl, channelName, currentShow }: HLS
   const [volume, setVolume] = useState(70);
   const [isMuted, setIsMuted] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [currentTime, setCurrentTime] = useState('');
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const hlsRef = useRef<Hls | null>(null);
@@ -108,6 +109,20 @@ export default function HLSTVPlayer({ streamUrl, channelName, currentShow }: HLS
     };
   }, []);
 
+  useEffect(() => {
+    const updateTime = () => {
+      const now = new Date();
+      const moscowTime = new Date(now.toLocaleString('en-US', { timeZone: 'Europe/Moscow' }));
+      const hours = moscowTime.getHours().toString().padStart(2, '0');
+      const minutes = moscowTime.getMinutes().toString().padStart(2, '0');
+      setCurrentTime(`${hours}:${minutes}`);
+    };
+
+    updateTime();
+    const interval = setInterval(updateTime, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div 
       ref={containerRef}
@@ -145,7 +160,7 @@ export default function HLSTVPlayer({ streamUrl, channelName, currentShow }: HLS
         {isPlaying && (
           <>
             <div className="absolute top-0 left-0 w-32 h-12 bg-gradient-to-br from-black via-black/95 to-transparent z-10" />
-            <div className="absolute top-0 right-0 w-24 h-16 bg-gradient-to-bl from-black via-black/95 to-transparent z-10" />
+            <div className="absolute top-0 right-0 w-16 h-10 bg-gradient-to-bl from-black/80 via-black/60 to-transparent z-10" />
             <div className="absolute bottom-0 right-0 w-20 h-10 bg-gradient-to-tl from-black via-black/95 to-transparent z-10" />
             
             <div className="absolute top-0 left-0 w-32 h-12 flex items-center justify-center z-20">
@@ -153,6 +168,14 @@ export default function HLSTVPlayer({ streamUrl, channelName, currentShow }: HLS
                 <h3 className="text-white font-heading font-bold text-[11px] tracking-tight leading-tight">
                   КонтентМедиа<span className="text-red-600">PRO</span>
                 </h3>
+              </div>
+            </div>
+            
+            <div className="absolute top-2 right-2 z-20">
+              <div className="bg-black/70 backdrop-blur-sm px-2 py-0.5 rounded">
+                <span className="text-white font-mono text-[11px] font-semibold">
+                  {currentTime}
+                </span>
               </div>
             </div>
             
