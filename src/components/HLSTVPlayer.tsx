@@ -144,9 +144,9 @@ export default function HLSTVPlayer({ streamUrl, channelName, currentShow }: HLS
 
         {isPlaying && (
           <>
-            <div className="absolute top-0 left-0 w-32 h-12 bg-black z-10" />
+            <div className="absolute top-0 left-0 w-32 h-12 bg-gradient-to-br from-black via-black/95 to-transparent z-10" />
             <div className="absolute top-0 right-0 w-24 h-16 bg-gradient-to-bl from-black via-black/95 to-transparent z-10" />
-            <div className="absolute bottom-0 right-0 w-36 h-20 bg-gradient-to-tl from-black via-black/90 to-transparent z-10" />
+            <div className="absolute bottom-0 right-0 w-20 h-10 bg-gradient-to-tl from-black via-black/95 to-transparent z-10" />
             
             <div className="absolute top-0 left-0 w-32 h-12 flex items-center justify-center z-20">
               <div className="bg-gradient-to-br from-black/90 to-red-950/85 backdrop-blur-sm px-2.5 py-1 rounded-md shadow-xl border border-red-600/25">
@@ -156,9 +156,9 @@ export default function HLSTVPlayer({ streamUrl, channelName, currentShow }: HLS
               </div>
             </div>
             
-            <div className="absolute bottom-3 right-3 z-20">
-              <div className="bg-gradient-to-tl from-black/90 to-red-950/85 backdrop-blur-sm px-2.5 py-1 rounded-md shadow-xl border border-red-600/25">
-                <h3 className="text-white font-heading font-bold text-[11px] tracking-tight leading-tight">
+            <div className="absolute bottom-0 right-0 w-20 h-10 flex items-center justify-center z-20">
+              <div className="bg-gradient-to-tl from-black/90 to-red-950/85 backdrop-blur-sm px-2 py-0.5 rounded-md shadow-xl border border-red-600/25">
+                <h3 className="text-white font-heading font-bold text-[10px] tracking-tight leading-tight">
                   <span className="text-red-600">PRO</span> TV
                 </h3>
               </div>
