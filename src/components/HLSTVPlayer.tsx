@@ -144,11 +144,11 @@ export default function HLSTVPlayer({ streamUrl, channelName, currentShow }: HLS
 
         {isPlaying && (
           <>
-            <div className="absolute top-0 left-0 w-32 h-16 bg-black z-10" />
-            <div className="absolute top-3 left-3 z-20">
-              <div className="bg-gradient-to-br from-black/90 to-red-950/80 backdrop-blur-md px-3 py-1.5 rounded-lg shadow-2xl border border-red-600/20">
-                <h3 className="text-white font-heading font-bold text-sm tracking-tight">
-                  КонтентМедиа<span className="text-red-600">PRO</span>
+            <div className="absolute top-0 left-0 w-48 h-20 bg-gradient-to-br from-black via-black/95 to-transparent z-10" />
+            <div className="absolute top-4 left-4 z-20">
+              <div className="bg-gradient-to-br from-black/95 to-red-950/90 backdrop-blur-md px-4 py-2 rounded-lg shadow-2xl border border-red-600/30">
+                <h3 className="text-white font-heading font-bold text-base tracking-tight">
+                  КонтентМедиа<span className="text-red-600">PRO</span> <span className="text-xs text-white/70">TV</span>
                 </h3>
               </div>
             </div>
