@@ -129,9 +129,9 @@ export default function Index() {
               </div>
 
               <HLSTVPlayer
-                streamUrl="http://1music.hu/1music.m3u8"
-                channelName="1Music Channel Hungary"
-                currentShow="Европейские хиты 24/7"
+                streamUrl="http://moobl.ru/hls/Bridge_tv.m3u8"
+                channelName="КонтентМедиаPRO TV"
+                currentShow="Русские и зарубежные хиты 24/7"
               />
 
               <div className="bg-muted/30 border border-border rounded-lg p-6">

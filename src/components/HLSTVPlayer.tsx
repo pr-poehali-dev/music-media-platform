@@ -142,13 +142,15 @@ export default function HLSTVPlayer({ streamUrl, channelName, currentShow }: HLS
           </div>
         )}
 
-        <div className="absolute top-4 right-4 z-10">
-          <img 
-            src="https://cdn.poehali.dev/files/5f25b9fc-c7a7-45be-be53-cbf3f32f5abb.jpg" 
-            alt="Логотип" 
-            className="h-16 w-16 rounded-lg opacity-70 shadow-lg object-cover"
-          />
-        </div>
+        {isPlaying && (
+          <div className="absolute top-4 right-4 z-10">
+            <div className="bg-black/60 backdrop-blur-sm px-4 py-2 rounded-lg shadow-2xl border border-white/20">
+              <h3 className="text-white font-heading font-bold text-xl tracking-tight">
+                КонтентМедиа<span className="text-red-600">PRO</span>
+              </h3>
+            </div>
+          </div>
+        )}
       </div>
 
       <div className="p-6 space-y-4">
