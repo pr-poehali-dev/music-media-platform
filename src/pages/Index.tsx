@@ -129,9 +129,9 @@ export default function Index() {
               </div>
 
               <HLSTVPlayer
-                streamUrl="http://moobl.ru/hls/Bridge_tv.m3u8"
+                streamUrl="https://stream.4fun.tv:8888/hls/4f_high/index.m3u8"
                 channelName="КонтентМедиаPRO TV"
-                currentShow="Русские и зарубежные хиты 24/7"
+                currentShow="Музыкальные хиты 24/7"
               />
 
               <div className="bg-muted/30 border border-border rounded-lg p-6">
