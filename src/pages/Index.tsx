@@ -129,7 +129,7 @@ export default function Index() {
               </div>
 
               <HLSTVPlayer
-                streamUrl="https://streaming102.interskytech.com/live/618.m3u8"
+                streamUrl="https://stream1.cinerama.uz/1296/tracks-v1a1/mono.m3u8"
                 channelName="КонтентМедиаPRO TV"
                 currentShow="Русские и зарубежные хиты 24/7"
               />
