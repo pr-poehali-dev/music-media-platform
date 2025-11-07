@@ -1,0 +1,25 @@
+{
+  "tests": [
+    {
+      "name": "Test OPTIONS request",
+      "method": "OPTIONS",
+      "path": "/",
+      "expectedStatus": 200
+    },
+    {
+      "name": "Test create interview",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "title": "Test Interview",
+        "content": "Test content"
+      },
+      "expectedStatus": 201,
+      "expectedBody": {
+        "title": "string",
+        "content": "string"
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}
